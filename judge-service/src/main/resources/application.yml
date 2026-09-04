@@ -1,0 +1,15 @@
+docker:
+  executable: C:/Users/bipin/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe
+
+
+
+judge:
+  limits:
+    memory: 256m
+    cpus: 1
+    pids: 64
+
+  docker:
+    java-image: eclipse-temurin:17-jdk
+    python-image: python:3.11
+    cpp-image: gcc:latest

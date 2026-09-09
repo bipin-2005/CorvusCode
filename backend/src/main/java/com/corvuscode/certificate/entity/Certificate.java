@@ -71,6 +71,28 @@ public class Certificate {
     )
     private Contest contest;
 
+    /*
+     * Snapshot of the contest name at the time
+     * the certificate is issued.
+     */
+    @Column(
+            name = "contest_name",
+            nullable = false,
+            length = 255
+    )
+    private String contestName;
+
+    /*
+     * Snapshot of the participant's full name at the time
+     * the certificate is issued.
+     */
+    @Column(
+            name = "participant_name",
+            nullable = false,
+            length = 255
+    )
+    private String participantName;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private CertificateType type;
@@ -78,9 +100,9 @@ public class Certificate {
     /*
      * Only populated for top-three certificates.
      *
-     * FIRST_PLACE  -> 1
-     * SECOND_PLACE -> 2
-     * THIRD_PLACE  -> 3
+     * FIRST_PLACE   -> 1
+     * SECOND_PLACE  -> 2
+     * THIRD_PLACE   -> 3
      * PARTICIPATION -> null
      */
     private Integer rank;

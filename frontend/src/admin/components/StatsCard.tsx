@@ -27,6 +27,7 @@ export default function StatsCard({
         dark:border-white/10
         dark:bg-[#111113]
         dark:hover:border-white/20
+        dark:hover:bg-[#111113]
       "
     >
       {/* Accent Line */}
@@ -93,3 +94,4 @@ export default function StatsCard({
     </div>
   );
 }
+

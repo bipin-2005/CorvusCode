@@ -65,6 +65,15 @@ public class CertificateServiceImpl
             Long contestId
     ) {
 
+        System.out.println(
+                "========== GENERATING CERTIFICATES =========="
+        );
+
+        System.out.println(
+                "Contest ID: " + contestId
+        );
+
+
         /*
          * Find contest
          */
@@ -77,6 +86,10 @@ public class CertificateServiceImpl
                                 )
                         );
 
+        System.out.println(
+                "Contest found: " + contest.getTitle()
+        );
+
 
         /*
          * Get final leaderboard
@@ -86,6 +99,11 @@ public class CertificateServiceImpl
                 leaderboardService.getLeaderboard(
                         contestId
                 );
+
+        System.out.println(
+                "Leaderboard entries: "
+                        + leaderboard.size()
+        );
 
 
         /*
@@ -115,6 +133,11 @@ public class CertificateServiceImpl
                 participationRepository
                         .findByContestId(contestId);
 
+        System.out.println(
+                "Participants found: "
+                        + participants.size()
+        );
+
 
         /*
          * Generate certificate for every participant
@@ -131,6 +154,13 @@ public class CertificateServiceImpl
             Long userId =
                     user.getId();
 
+            System.out.println(
+                    "Generating certificate for user: "
+                            + userId
+                            + " / "
+                            + user.getEmail()
+            );
+
 
             /*
              * Prevent duplicate certificates.
@@ -143,6 +173,11 @@ public class CertificateServiceImpl
                                     userId
                             )
             ) {
+
+                System.out.println(
+                        "Certificate already exists for user: "
+                                + userId
+                );
 
                 continue;
             }
@@ -165,6 +200,10 @@ public class CertificateServiceImpl
                                 .intValue();
             }
 
+            System.out.println(
+                    "User rank: " + rank
+            );
+
 
             /*
              * Determine certificate type.
@@ -174,6 +213,10 @@ public class CertificateServiceImpl
                     determineCertificateType(
                             rank
                     );
+
+            System.out.println(
+                    "Certificate type: " + type
+            );
 
 
             /*
@@ -190,15 +233,33 @@ public class CertificateServiceImpl
                             )
                             .user(user)
                             .contest(contest)
+
+                            /*
+                             * Store contest name snapshot.
+                             */
+                            .contestName(
+                                    contest.getTitle()
+                            )
+
+                            /*
+                             * Store participant name snapshot.
+                             */
+                            .participantName(
+                                    user.getFullName()
+                            )
+
                             .type(type)
+
                             .rank(
                                     isTopThree(rank)
                                             ? rank
                                             : null
                             )
+
                             .issuedAt(
                                     LocalDateTime.now()
                             )
+
                             .build();
 
 
@@ -214,6 +275,11 @@ public class CertificateServiceImpl
                             certificate
                     );
 
+            System.out.println(
+                    "CERTIFICATE SAVED. ID: "
+                            + savedCertificate.getId()
+            );
+
 
             /*
              * Generate PDF.
@@ -226,6 +292,11 @@ public class CertificateServiceImpl
                                 .generateCertificatePdf(
                                         savedCertificate
                                 );
+
+                System.out.println(
+                        "PDF GENERATED: "
+                                + pdfPath
+                );
 
 
                 /*
@@ -242,8 +313,18 @@ public class CertificateServiceImpl
                         savedCertificate
                 );
 
+                System.out.println(
+                        "CERTIFICATE COMPLETED FOR USER: "
+                                + userId
+                );
+
 
             } catch (IOException e) {
+
+                System.out.println(
+                        "PDF GENERATION FAILED: "
+                                + e.getMessage()
+                );
 
                 throw new RuntimeException(
                         "Failed to generate certificate PDF",
@@ -251,6 +332,10 @@ public class CertificateServiceImpl
                 );
             }
         }
+
+        System.out.println(
+                "========== CERTIFICATE GENERATION FINISHED =========="
+        );
     }
 
 
@@ -334,15 +419,33 @@ public class CertificateServiceImpl
                         )
                         .user(user)
                         .contest(contest)
+
+                        /*
+                         * Store contest name snapshot.
+                         */
+                        .contestName(
+                                contest.getTitle()
+                        )
+
+                        /*
+                         * Store participant name snapshot.
+                         */
+                        .participantName(
+                                user.getFullName()
+                        )
+
                         .type(type)
+
                         .rank(
                                 isTopThree(rank)
                                         ? rank
                                         : null
                         )
+
                         .issuedAt(
                                 LocalDateTime.now()
                         )
+
                         .build();
 
 
@@ -597,13 +700,15 @@ public class CertificateServiceImpl
     ) {
 
         Certificate certificate =
-                certificateRepository.findById(
-                        certificateId
-                ).orElseThrow(() ->
-                        new RuntimeException(
-                                "Certificate not found"
+                certificateRepository
+                        .findById(
+                                certificateId
                         )
-                );
+                        .orElseThrow(() ->
+                                new RuntimeException(
+                                        "Certificate not found"
+                                )
+                        );
 
 
         /*
@@ -695,13 +800,15 @@ public class CertificateServiceImpl
     ) {
 
         Certificate certificate =
-                certificateRepository.findById(
-                        certificateId
-                ).orElseThrow(() ->
-                        new RuntimeException(
-                                "Certificate not found"
+                certificateRepository
+                        .findById(
+                                certificateId
                         )
-                );
+                        .orElseThrow(() ->
+                                new RuntimeException(
+                                        "Certificate not found"
+                                )
+                        );
 
 
         return certificate

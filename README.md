@@ -9,13 +9,9 @@ An online coding platform designed to help developers practice programming, solv
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
 ![Docker](https://img.shields.io/badge/Docker-Sandbox-2496ED)
 
-## Live Link
+## Features
 
-Coming Soon
-
-##Features
-
-### ✅ Implemented
+### Implemented
 
 - **User Authentication & Authorization**
   - Secure user registration and login

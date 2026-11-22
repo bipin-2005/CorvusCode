@@ -220,7 +220,7 @@ CorvusCode/
 <table>
   <tr>
     <td align="center">
-      <strong>Dashboard</strong><br><br>
+      <strong>Admin Dashboard</strong><br><br>
       <img src="https://github.com/user-attachments/assets/4d2cae37-4c85-4224-83c7-8d423bcbb50a" alt="Dashboard" width="100%">
     </td>
     <td align="center">
@@ -234,7 +234,7 @@ CorvusCode/
       <img src="https://github.com/user-attachments/assets/e858aec9-c4fe-48c7-8154-1a3ad7eb6e01" alt="Contest Dashboard" width="100%">
     </td>
     <td align="center">
-      <strong>Admin Dashboard</strong><br><br>
+      <strong>Dashboard</strong><br><br>
       <img src="https://github.com/user-attachments/assets/45c87a24-98b4-4762-92c6-96861f98c154" alt="Admin Dashboard" width="100%">
     </td>
   </tr>

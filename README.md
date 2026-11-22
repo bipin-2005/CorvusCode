@@ -221,21 +221,21 @@ CorvusCode/
   <tr>
     <td align="center">
       <strong>Dashboard</strong><br><br>
-      <img src="ADD_DASHBOARD_SCREENSHOT_URL" alt="Dashboard" width="100%">
+      <img src="https://github.com/user-attachments/assets/4d2cae37-4c85-4224-83c7-8d423bcbb50a" alt="Dashboard" width="100%">
     </td>
     <td align="center">
       <strong> Code Editor</strong><br><br>
-      <img src="ADD_CODE_EDITOR_SCREENSHOT_URL" alt="Code Editor" width="100%">
+      <img  src="https://github.com/user-attachments/assets/d5d17660-7c0f-48ab-a0a2-b4c3f7f88091" alt="Code Editor" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center">
       <strong>Contest Dashboard</strong><br><br>
-      <img src="ADD_CONTEST_SCREENSHOT_URL" alt="Contest Dashboard" width="100%">
+      <img src="https://github.com/user-attachments/assets/e858aec9-c4fe-48c7-8154-1a3ad7eb6e01" alt="Contest Dashboard" width="100%">
     </td>
     <td align="center">
       <strong>Admin Dashboard</strong><br><br>
-      <img src="ADD_ADMIN_SCREENSHOT_URL" alt="Admin Dashboard" width="100%">
+      <img src="https://github.com/user-attachments/assets/45c87a24-98b4-4762-92c6-96861f98c154" alt="Admin Dashboard" width="100%">
     </td>
   </tr>
 </table>

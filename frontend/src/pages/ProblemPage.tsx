@@ -311,8 +311,6 @@ const handleRunCode = async () => {
       setOutput(result.stdout);
     }
 
-    setExecutionTime(result.executionTime);
-    setMemory(result.memory);
 
   } catch (error) {
     console.error("Judge request failed:", error);

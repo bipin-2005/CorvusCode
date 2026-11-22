@@ -215,26 +215,26 @@ CorvusCode/
 └── README.md
 ```
 
-## 📸 Screenshots
+## Screenshots
 
 <table>
   <tr>
     <td align="center">
-      <strong>📊 Dashboard</strong><br><br>
+      <strong>Dashboard</strong><br><br>
       <img src="ADD_DASHBOARD_SCREENSHOT_URL" alt="Dashboard" width="100%">
     </td>
     <td align="center">
-      <strong>💻 Code Editor</strong><br><br>
+      <strong> Code Editor</strong><br><br>
       <img src="ADD_CODE_EDITOR_SCREENSHOT_URL" alt="Code Editor" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <strong>🏆 Contest Dashboard</strong><br><br>
+      <strong>Contest Dashboard</strong><br><br>
       <img src="ADD_CONTEST_SCREENSHOT_URL" alt="Contest Dashboard" width="100%">
     </td>
     <td align="center">
-      <strong>⚙️ Admin Dashboard</strong><br><br>
+      <strong>Admin Dashboard</strong><br><br>
       <img src="ADD_ADMIN_SCREENSHOT_URL" alt="Admin Dashboard" width="100%">
     </td>
   </tr>
